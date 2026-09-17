@@ -1,0 +1,98 @@
+# ============================================================
+# Termora - Render.com Free Deployment Config
+# ============================================================
+
+services:
+
+  # --- 1. API Gateway (FastAPI) ---
+  - type: web
+    name: termora-api
+    runtime: python
+    repo: https://github.com/YOUR_GITHUB_USERNAME/Termora
+    branch: main
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers 2
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: termora-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: termora-redis
+          property: connectionString
+      - key: AGENT_SERVICE_URL
+        value: https://termora-agent.onrender.com
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        sync: false
+      - key: MOCK_MCP
+        value: "true"
+      - key: FRONTEND_URL
+        value: https://your-termora.vercel.app
+
+  # --- 2. Agent Service (LangGraph + MCP) ---
+  - type: web
+    name: termora-agent
+    runtime: python
+    repo: https://github.com/YOUR_GITHUB_USERNAME/Termora
+    branch: main
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn services.agent_service.main:app --host 0.0.0.0 --port $PORT --workers 1
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: termora-db
+          property: connectionString
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: MOCK_MCP
+        value: "true"
+
+  # --- 3. Ingestion Service ---
+  - type: web
+    name: termora-ingestion
+    runtime: python
+    repo: https://github.com/YOUR_GITHUB_USERNAME/Termora
+    branch: main
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn services.ingestion_service.main:app --host 0.0.0.0 --port $PORT --workers 1
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: termora-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: termora-redis
+          property: connectionString
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+
+  # --- 4. Redis ---
+  - type: redis
+    name: termora-redis
+    plan: free
+    maxmemoryPolicy: allkeys-lru
+
+databases:
+  # --- 5. PostgreSQL (90-day free, then switch to Neon.tech) ---
+  - name: termora-db
+    plan: free
+    databaseName: termora_db
+    user: termora

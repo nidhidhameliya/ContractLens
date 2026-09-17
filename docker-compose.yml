@@ -1,0 +1,98 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: Termora_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: Termora
+      POSTGRES_PASSWORD: Termora_secret
+      POSTGRES_DB: Termora_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/db_init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U Termora -d Termora_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: Termora_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Microservice: API Gateway (frontend-facing) ────────────────────────────
+  api_gateway:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: Termora_api
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DATABASE_URL=postgresql://Termora:Termora_secret@db:5432/Termora_db
+      - REDIS_URL=redis://redis:6379/0
+      - AGENT_SERVICE_URL=http://agent_service:8001
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # ── Microservice: Agent Orchestration (LangGraph + MCP) ───────────────────
+  agent_service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: Termora_agent
+    command: uvicorn services.agent_service.main:app --host 0.0.0.0 --port 8001
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./backend:/app
+      - chromadb_store:/app/.chromadb_store
+    environment:
+      - DATABASE_URL=postgresql://Termora:Termora_secret@db:5432/Termora_db
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ── Microservice: Ingestion (document parsing + scheduled scans) ──────────
+  ingestion_service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: Termora_ingestion
+    command: uvicorn services.ingestion_service.main:app --host 0.0.0.0 --port 8002
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DATABASE_URL=postgresql://Termora:Termora_secret@db:5432/Termora_db
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  redisdata:
+  chromadb_store:
+

@@ -1,0 +1,21 @@
+ENTERPRISE CLOUD SOFTWARE AGREEMENT
+
+This Agreement is between Termora Corp ("Customer") and CloudScale SaaS Solutions ("Provider").
+
+1. SUBSCRIPTION SERVICES
+Provider grants Customer a limited, non-transferable license to access the CloudScale CRM platform for 500 users.
+
+2. FEES AND PAYMENT
+The annual subscription fee is $120,000 USD, payable annually in advance. Provider reserves the right to increase the subscription fee by up to ten percent (10%) at the start of each renewal term upon 30 days written notice.
+
+3. TERM AND TERMINATION
+The initial term is three (3) years. Either party may terminate for cause if the other party materially breaches this Agreement and fails to cure the breach within 30 days of written notice. Customer may terminate for convenience with 90 days written notice, provided that Customer pays a termination fee equal to 50% of the remaining contract value.
+
+4. SERVICE LEVEL AGREEMENT (SLA)
+Provider aims to provide 99.5% uptime. If uptime falls below 99.0% in a calendar month, Customer's sole and exclusive remedy shall be a service credit equal to 5% of the monthly fee, provided Customer requests the credit in writing within 5 days of the month's end.
+
+5. DATA USAGE
+Customer retains ownership of all customer data uploaded to the platform. However, Provider is granted a perpetual, irrevocable, royalty-free license to use, aggregate, and sell anonymized customer data for any purpose, including sharing with third-party advertising partners.
+
+6. LIMITATION OF LIABILITY
+Provider's liability is limited to the fees paid by Customer in the twelve (12) months preceding the claim. In no event shall Provider be liable for indirect, incidental, or consequential damages.

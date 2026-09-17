@@ -1,0 +1,42 @@
+SERVICE AGREEMENT
+
+This Software-as-a-Service Agreement ("Agreement") is entered into as of January 1, 2024,
+between Acme Corporation ("Customer") and Salesforce, Inc. ("Vendor").
+
+VENDOR: Salesforce, Inc.
+CONTRACT VALUE: $120,000 per year (USD)
+CURRENCY: USD
+
+1. SUBSCRIPTION TERM
+   The initial term of this Agreement is one (1) year commencing on January 1, 2024
+   and ending on December 31, 2024.
+
+2. AUTO-RENEWAL
+   This Agreement shall automatically renew for successive one-year terms unless either
+   party provides written notice of non-renewal at least 90 days prior to the end of
+   the then-current term. AUTO-RENEW: YES.
+   RENEWAL DATE: 2024-12-31
+   NOTICE PERIOD: 90 days
+
+3. PRICE ESCALATION
+   The subscription fees shall increase by 8% annually upon each renewal term.
+   PRICE ESCALATION: 8%
+
+4. LICENSED SEATS
+   Customer is licensed for 200 named user seats. Current active users: 45.
+   Unused seats: 155.
+
+5. PAYMENT TERMS
+   Customer shall pay all fees within 30 days of invoice date.
+   Annual fee: $120,000 USD
+
+6. CANCELLATION
+   Either party may terminate this agreement with 90 days written notice.
+   Early termination fee: 25% of remaining contract value.
+
+7. GOVERNING LAW
+   This Agreement shall be governed by the laws of the State of California.
+
+SIGNATURES:
+Customer: _______________________     Vendor: _______________________
+Date: January 1, 2024                 Date: January 1, 2024

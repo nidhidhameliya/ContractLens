@@ -1,0 +1,21 @@
+INDEPENDENT CONTRACTOR AGREEMENT
+
+This Agreement is entered into by Termora Corp ("Company") and Jane Doe ("Contractor").
+
+1. SERVICES
+Contractor agrees to provide frontend UI/UX design services on a freelance basis.
+
+2. COMPENSATION
+Company will pay Contractor at a rate of $85.00 USD per hour. Contractor shall invoice Company monthly, and Company shall pay undisputed invoices within 30 days of receipt. Total compensation under this Agreement shall not exceed $15,000 USD without prior written approval.
+
+3. INDEPENDENT CONTRACTOR STATUS
+Contractor is an independent contractor, not an employee of Company. Contractor is solely responsible for all taxes, withholdings, and insurance.
+
+4. INTELLECTUAL PROPERTY
+All work product, designs, code, and materials created by Contractor in the performance of services under this Agreement shall be considered "work made for hire" and shall be the exclusive property of Company. Contractor irrevocably assigns all rights, title, and interest in the work product to Company.
+
+5. TERMINATION
+Either party may terminate this Agreement at any time, with or without cause, upon 14 days prior written notice. Upon termination, Company shall pay Contractor for all services satisfactorily performed up to the termination date.
+
+6. CONFIDENTIALITY
+Contractor agrees to keep all Company business information confidential and will not disclose it to any third party during or after the term of this Agreement.

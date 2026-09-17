@@ -1,0 +1,24 @@
+MASTER HOSTING AND INFRASTRUCTURE AGREEMENT
+
+This Agreement is made by and between Termora Corp ("Customer") and GlobalDataHost Limited, a company registered in the Republic of Seychelles ("Host").
+
+1. SERVICES
+Host shall provide dedicated server infrastructure and network connectivity.
+
+2. FEES
+Customer shall pay a fixed monthly fee of $45,000 USD. Prices are guaranteed for the first 6 months. Thereafter, Host may increase pricing at its sole discretion with 10 days notice via the Host administration dashboard.
+
+3. TERM AND TERMINATION
+This Agreement is for a fixed term of 5 years. There is no right to terminate for convenience. If Customer terminates prior to the end of the 5-year term, Customer must pay an immediate lump sum equal to 100% of the remaining contract value, plus a $50,000 administrative penalty fee. 
+
+4. DATA SECURITY AND BREACH NOTIFICATION
+Host utilizes commercially reasonable efforts to secure its network. However, Host disclaims any liability for data loss, ransomware, or unauthorized access. In the event of a data breach, Host is not obligated to notify Customer unless required by Seychelles law.
+
+5. SERVICE AVAILABILITY
+Host provides services on an "AS IS" and "AS AVAILABLE" basis. There is no guaranteed uptime SLA. Customer acknowledges that extended outages may occur without compensation.
+
+6. INDEMNIFICATION
+Customer shall fully indemnify, defend, and hold harmless Host against any and all claims, lawsuits, or damages brought by third parties, regardless of whether such claims arise from Host's own gross negligence or willful misconduct.
+
+7. GOVERNING LAW AND JURISDICTION
+This Agreement shall be governed exclusively by the laws of the Republic of Seychelles. Any dispute shall be resolved via binding arbitration in Victoria, Seychelles. Customer waives any right to a class action or jury trial.

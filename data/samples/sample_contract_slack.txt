@@ -1,0 +1,35 @@
+VENDOR SERVICES AGREEMENT
+
+Parties: TechCorp Solutions ("Customer") and Slack Technologies ("Vendor")
+Effective Date: March 15, 2024
+
+VENDOR: Slack Technologies
+CONTRACT VALUE: $36,000 annually (USD)
+
+1. SERVICES
+   Vendor shall provide workplace messaging and collaboration platform services
+   as described in the applicable Order Form.
+
+2. SUBSCRIPTION & RENEWAL
+   Initial Term: March 15, 2024 through March 14, 2025
+   RENEWAL DATE: 2025-03-14
+   AUTO-RENEW: YES
+   NOTICE PERIOD: 30 days
+
+3. PRICING
+   Base fee: $36,000/year for 300 seats
+   Current active seats: 280
+   PRICE ESCALATION: 3%
+   Annual increase capped at CPI or 3%, whichever is lower.
+
+4. ACCEPTABLE USE
+   Customer shall not use the service for any unlawful purpose.
+
+5. DATA SECURITY
+   Vendor maintains SOC 2 Type II certification.
+
+6. TERMINATION
+   30 days written notice required from either party.
+
+Signed,
+TechCorp Solutions                    Slack Technologies

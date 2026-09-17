@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "Termora_graph": "./app/orchestrator/graph.py:Termora_graph"
+  },
+  "env": ".env"
+}
