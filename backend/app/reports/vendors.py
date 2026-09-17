@@ -1,5 +1,5 @@
 """
-Termora — Vendor Intelligence API
+ContractLens — Vendor Intelligence API
 Cross-contract analytics per vendor: total spend, contract count, risk breakdown, renewal timeline.
 """
 
@@ -122,3 +122,4 @@ def get_vendor_intelligence(
         "total_portfolio_spend": round(total_spend, 2),
         "vendors": result,
     }
+

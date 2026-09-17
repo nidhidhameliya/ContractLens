@@ -1,5 +1,5 @@
 """
-Termora — Okta MCP Tool Wrappers
+ContractLens — Okta MCP Tool Wrappers
 Fetches usage/login data per vendor app.
 Optional — Risk Agent degrades gracefully when unavailable (FR-RISK-3).
 """
@@ -100,3 +100,4 @@ def get_active_seats(org_id: str, app_name: str, db: Session) -> tuple[SeatInfo 
         result_summary=f"Active: {seat_info.active_users}/{seat_info.total_seats} seats",
     )
     return seat_info, log
+

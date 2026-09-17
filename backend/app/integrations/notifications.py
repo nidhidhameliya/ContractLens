@@ -1,5 +1,5 @@
 """
-Termora — Notifications API
+ContractLens — Notifications API
 In-app notification feed: new contracts, approvals needed, and verification results.
 """
 
@@ -122,3 +122,4 @@ def list_notifications(
         "notifications": notifications[:20],
         "unread_count": sum(1 for n in notifications if not n["read"] and n["priority"] in ("high", "medium")),
     }
+

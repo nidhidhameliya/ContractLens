@@ -1,5 +1,5 @@
 """
-Termora — Dashboard API Router
+ContractLens — Dashboard API Router
 Aggregated metrics for the main dashboard view.
 """
 
@@ -93,3 +93,4 @@ def get_dashboard_summary(
         "risk_breakdown": risk_breakdown,
         "mcp_connections": mcp_health,
     }
+

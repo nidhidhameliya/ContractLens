@@ -1,5 +1,5 @@
 """
-Termora — User Model
+ContractLens — User Model
 Supports Org Admin, standard user, and read-only viewer roles (RBAC).
 """
 
@@ -37,3 +37,4 @@ class User(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     def __repr__(self) -> str:
         return f"<User id={self.id} email={self.email!r} role={self.role}>"
+

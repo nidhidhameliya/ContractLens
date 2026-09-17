@@ -1,5 +1,5 @@
 """
-Termora — Decisions API Router
+ContractLens — Decisions API Router
 Approval queue and approve/reject endpoints.
 Human approval resumes the LangGraph pipeline (FR-APP-2, FR-APP-3).
 """
@@ -209,3 +209,4 @@ def _generate_action_draft(decision: Decision, db: Session):
     )
     db.add(action)
     db.commit()
+

@@ -58,7 +58,7 @@ export default function AppShell({ children }) {
 
   useEffect(() => {
     Promise.resolve().then(() => {
-      const token = localStorage.getItem("Termora_token");
+      const token = localStorage.getItem("ContractLens_token");
       if (!isPublic && !token) {
         router.replace("/login");
       } else {

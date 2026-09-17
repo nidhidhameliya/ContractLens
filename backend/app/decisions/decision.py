@@ -1,5 +1,5 @@
 """
-Termora — Decision Model
+ContractLens — Decision Model
 The structured recommendation object synthesized from all agent outputs.
 Contains both the LLM-generated content and the deterministic rule layer output.
 """
@@ -72,3 +72,4 @@ class Decision(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 # Import at bottom to resolve SQLAlchemy string references for relationships
 from app.actions.action import Action
 from app.actions.outcome import Outcome
+

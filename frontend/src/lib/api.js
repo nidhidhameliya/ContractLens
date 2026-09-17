@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// Termora — API client utility
+// ContractLens — API client utility
 // Wraps fetch calls to the FastAPI backend with auth headers.
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 function getToken() {
   if (typeof window === "undefined") return null;
-  return localStorage.getItem("Termora_token");
+  return localStorage.getItem("ContractLens_token");
 }
 
 async function apiFetch(endpoint, options = {}) {
@@ -21,7 +21,7 @@ async function apiFetch(endpoint, options = {}) {
 
   if (!response.ok) {
     if (response.status === 401 && typeof window !== "undefined") {
-      localStorage.removeItem("Termora_token");
+      localStorage.removeItem("ContractLens_token");
       window.location.href = "/login";
     }
     const error = await response.json().catch(() => ({ detail: "Network error" }));
@@ -69,7 +69,7 @@ export const api = {
     });
     if (!response.ok) {
       if (response.status === 401 && typeof window !== "undefined") {
-        localStorage.removeItem("Termora_token");
+        localStorage.removeItem("ContractLens_token");
         window.location.href = "/login";
       }
       throw new Error("Upload failed");

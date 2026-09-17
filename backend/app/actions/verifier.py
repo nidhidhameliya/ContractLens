@@ -1,5 +1,5 @@
 """
-Termora — 30-Day Outcome Verification Job
+ContractLens — 30-Day Outcome Verification Job
 Runs periodically in the background. Finds Actions that were executed 30 days ago,
 uses the MCP server to verify if the usage actually dropped to zero (indicating successful cancellation),
 and updates the Action outcome. (FR-ACT-4)
@@ -109,3 +109,4 @@ def run_daily_verification():
         logger.error(f"[Verifier] Job failed: {e}")
     finally:
         db.close()
+

@@ -1,5 +1,5 @@
 """
-Termora — Decision Agent (ChromaDB-powered RAG)
+ContractLens — Decision Agent (ChromaDB-powered RAG)
 Synthesizes Detection, Risk, and Finance agent outputs into a recommendation.
 Uses ChromaDB for semantic retrieval of past successful decisions.
 """
@@ -50,7 +50,7 @@ def _get_chroma_collection():
     )
 
     _chroma_collection = _chroma_client.get_or_create_collection(
-        name="Termora_decisions",
+        name="ContractLens_decisions",
         embedding_function=ef,
         metadata={"hnsw:space": "cosine"},
     )
@@ -178,3 +178,4 @@ def run_decision_agent(state: ContractScanState) -> ContractScanState:
                 "confidence": 0.0,
             },
         }
+

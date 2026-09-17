@@ -1,5 +1,5 @@
 """
-Termora — Auth API Router
+ContractLens — Auth API Router
 Registration, login, and current user endpoints.
 """
 
@@ -89,3 +89,4 @@ def get_me(current_user: User = Depends(get_current_user)):
         "role": current_user.role.value,
         "org_id": str(current_user.org_id),
     }
+

@@ -1,5 +1,5 @@
 """
-Termora — Deterministic Rule Layer
+ContractLens — Deterministic Rule Layer
 Sets requires_human_approval based on org-configured thresholds.
 This is pure Python — no LLM, no MCP, no external calls. (FR-DEC-2)
 Lives entirely outside the agent reasoning path to prevent any LLM influence on approval routing.
@@ -60,3 +60,4 @@ def apply_approval_rules(state: ContractScanState) -> ContractScanState:
         "requires_second_approver": requires_second_approver,
         "route": route,
     }
+

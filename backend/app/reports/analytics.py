@@ -1,5 +1,5 @@
 """
-Termora — Analytics API
+ContractLens — Analytics API
 Provides outcome ROI data and risk trend time-series for the analytics dashboard.
 """
 
@@ -152,3 +152,4 @@ def get_analytics_summary(
         "high_risk_contracts": high_risk,
         "auto_approved": auto_approved,
     }
+

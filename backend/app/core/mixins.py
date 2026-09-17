@@ -1,5 +1,5 @@
 """
-Termora — Shared Model Mixin
+ContractLens — Shared Model Mixin
 Provides id (UUID), created_at for all models.
 """
 
@@ -27,3 +27,4 @@ class UUIDPrimaryKeyMixin:
         default=uuid.uuid4,
         nullable=False,
     )
+

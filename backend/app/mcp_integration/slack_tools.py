@@ -1,5 +1,5 @@
 """
-Termora — Slack MCP Tool Wrappers
+ContractLens — Slack MCP Tool Wrappers
 Used for approval notifications and action delivery.
 NEVER called autonomously — only after explicit human approval (FR-ACT-2).
 """
@@ -51,3 +51,4 @@ def send_dm(org_id: str, slack_user_id: str, text: str, db: Session) -> MCPToolC
     )
     logger.info(f"[MCP Slack] send_dm org={org_id} user={slack_user_id}")
     return log
+

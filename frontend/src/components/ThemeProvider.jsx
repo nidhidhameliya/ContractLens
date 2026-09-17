@@ -18,7 +18,7 @@ export default function ThemeProvider({ children }) {
   // Run synchronously before paint
   useEffect(() => {
     // Read saved preference
-    const saved = localStorage.getItem("Termora_theme");
+    const saved = localStorage.getItem("ContractLens_theme");
     let resolved;
     if (saved === "light" || saved === "dark") {
       resolved = saved;
@@ -35,7 +35,7 @@ export default function ThemeProvider({ children }) {
   // Apply to DOM whenever theme changes
   useEffect(() => {
     applyTheme(theme);
-    localStorage.setItem("Termora_theme", theme);
+    localStorage.setItem("ContractLens_theme", theme);
   }, [theme]);
 
   const toggleTheme = useCallback(() => {

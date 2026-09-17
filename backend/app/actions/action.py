@@ -1,5 +1,5 @@
 """
-Termora — Action Model
+ContractLens — Action Model
 Stores draft artifacts (emails, Slack messages) generated after decision approval.
 Tracks the specific MCP tool call used when a human confirms "send".
 """
@@ -52,3 +52,4 @@ class Action(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     def __repr__(self) -> str:
         return f"<Action type={self.action_type} status={self.status} decision={self.decision_id}>"
+

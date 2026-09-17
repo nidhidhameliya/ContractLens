@@ -1,5 +1,5 @@
 """
-Termora — Ingestion Service
+ContractLens — Ingestion Service
 Polls configured MCP servers (Google Drive / Gmail) for new contracts,
 deduplicates them, extracts text, and triggers the AI pipeline.
 """
@@ -191,3 +191,4 @@ def poll_gmail_mcp(org_id: str, db, budget: int) -> int:
         logger.error(f"[Ingestion] Failed to poll Gmail MCP for org_id={org_id}: {e}")
 
     return ingested_count
+

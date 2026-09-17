@@ -1,5 +1,5 @@
 """
-Termora — Contracts API Router
+ContractLens — Contracts API Router
 Full CRUD + scan trigger + manual upload endpoints.
 All queries are scoped to the authenticated user's org_id (B.6 multi-tenancy).
 """
@@ -262,7 +262,7 @@ def delete_contract(
 def _run_pipeline(contract_id: str, org_id: str, user_email: str):
     """Background task that runs the LangGraph pipeline for a contract."""
     from app.core.database import SessionLocal
-    from app.intelligence.graph import Termora_graph
+    from app.intelligence.graph import ContractLens_graph
 
     db = SessionLocal()
     try:
@@ -287,7 +287,7 @@ def _run_pipeline(contract_id: str, org_id: str, user_email: str):
             "route": "continue",
         }
 
-        result = Termora_graph.invoke(initial_state, config={"thread_id": contract_id})
+        result = ContractLens_graph.invoke(initial_state, config={"thread_id": contract_id})
 
         # Persist results to DB
         _persist_pipeline_results(contract, result, db, user_email)
@@ -459,3 +459,4 @@ def _persist_pipeline_results(contract: Contract, result: dict, db: Session, use
                 args=(str(contract.org_id), str(contract.id), slack_decision_details),
                 daemon=True
             ).start()
+

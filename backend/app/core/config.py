@@ -1,5 +1,5 @@
 """
-Termora — Application Configuration
+ContractLens — Application Configuration
 All settings loaded from environment variables via pydantic-settings.
 Sensitive values (API keys, secrets) must never be hardcoded here.
 """
@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     )
 
     # --- Database ---
-    database_url: str = "postgresql://Termora:Termora_secret@localhost:5432/Termora_db"
+    database_url: str = "postgresql://ContractLens:ContractLens_secret@localhost:5432/ContractLens_db"
 
     # --- Redis ---
     redis_url: str = "redis://localhost:6379/0"
@@ -47,7 +47,7 @@ class Settings(BaseSettings):
     # --- Email ---
     mail_username: str = ""
     mail_password: str = ""
-    mail_from: str = "noreply@Termora.ai"
+    mail_from: str = "noreply@ContractLens.ai"
     mail_port: int = 587
     mail_server: str = "smtp.gmail.com"
     mail_starttls: bool = True
@@ -60,7 +60,7 @@ class Settings(BaseSettings):
 
     # --- LangSmith Tracing (optional) ---
     langchain_tracing_v2: str = "false"
-    langchain_project: str = "Termora"
+    langchain_project: str = "ContractLens"
     langchain_api_key: str = ""
 
 
@@ -71,3 +71,4 @@ def get_settings() -> Settings:
 
 
 settings = get_settings()
+

@@ -22,7 +22,7 @@ export default function LoginPage() {
   });
 
   useEffect(() => {
-    if (localStorage.getItem("Termora_token")) {
+    if (localStorage.getItem("ContractLens_token")) {
       router.replace("/");
     }
   }, [router]);
@@ -47,7 +47,7 @@ export default function LoginPage() {
         const res = await api.login({ email: form.email, password: form.password });
         token = res.access_token;
       }
-      localStorage.setItem("Termora_token", token);
+      localStorage.setItem("ContractLens_token", token);
       router.push("/");
     } catch (err) {
       setError(err.message || "Something went wrong");
@@ -75,7 +75,7 @@ export default function LoginPage() {
             className="text-xl font-semibold"
             style={{ color: "var(--text-primary)", letterSpacing: "-0.025em" }}
           >
-            Termora
+            ContractLens
           </h1>
           <p className="text-xs mt-1" style={{ color: "var(--text-tertiary)" }}>
             AI Contract Risk Intelligence
@@ -292,7 +292,7 @@ export default function LoginPage() {
           className="text-center text-[11px] mt-5"
           style={{ color: "var(--text-disabled)" }}
         >
-          Termora · Contract Intelligence · MCP-powered
+          ContractLens · Contract Intelligence · MCP-powered
         </p>
       </div>
     </div>

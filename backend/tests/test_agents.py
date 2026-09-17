@@ -1,5 +1,5 @@
 """
-Termora — Unit Tests
+ContractLens — Unit Tests
 pytest suite for agents, rules, and API routes.
 Run: cd backend && pytest tests/ -v
 """
@@ -226,3 +226,4 @@ class TestDecisionRules:
             })
             result = apply_approval_rules(state)
             assert result["requires_second_approver"] is True
+

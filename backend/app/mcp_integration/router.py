@@ -1,5 +1,5 @@
 """
-Termora — MCP Connection API Router
+ContractLens — MCP Connection API Router
 Manages external MCP server connections (Google Drive, Gmail, Slack, Okta).
 """
 
@@ -186,3 +186,4 @@ def update_mcp_scopes(
     db.refresh(connection)
     
     return {"message": "Scopes updated", "scopes_granted": connection.scopes_granted}
+

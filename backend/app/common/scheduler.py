@@ -1,5 +1,5 @@
 """
-Termora — Ingestion Scheduler
+ContractLens — Ingestion Scheduler
 Runs periodically to trigger MCP polling for each organization.
 """
 import logging
@@ -33,3 +33,4 @@ def run_ingestion_job():
         logger.error(f"[Ingestion Scheduler] Error in job: {e}")
     finally:
         db.close()
+

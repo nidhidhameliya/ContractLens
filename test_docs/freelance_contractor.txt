@@ -1,6 +1,6 @@
 INDEPENDENT CONTRACTOR AGREEMENT
 
-This Agreement is entered into by Termora Corp ("Company") and Jane Doe ("Contractor").
+This Agreement is entered into by ContractLens Corp ("Company") and Jane Doe ("Contractor").
 
 1. SERVICES
 Contractor agrees to provide frontend UI/UX design services on a freelance basis.
@@ -19,3 +19,4 @@ Either party may terminate this Agreement at any time, with or without cause, up
 
 6. CONFIDENTIALITY
 Contractor agrees to keep all Company business information confidential and will not disclose it to any third party during or after the term of this Agreement.
+

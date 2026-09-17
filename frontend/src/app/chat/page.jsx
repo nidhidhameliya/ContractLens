@@ -30,7 +30,7 @@ export default function ChatPage() {
     id: "welcome",
     role: "assistant",
     content:
-    "👋 Hi! I'm **Termora AI**, your procurement intelligence assistant.\n\nI can answer questions about your contracts, risks, savings opportunities, and past decisions. Ask me anything — like *'Which contracts are up for renewal?'* or *'What's our biggest risk right now?'*",
+    "👋 Hi! I'm **ContractLens AI**, your procurement intelligence assistant.\n\nI can answer questions about your contracts, risks, savings opportunities, and past decisions. Ask me anything — like *'Which contracts are up for renewal?'* or *'What's our biggest risk right now?'*",
     timestamp: new Date()
   }]
   );
@@ -100,7 +100,7 @@ export default function ChatPage() {
         </div>
         <div>
           <h1 className="text-lg font-bold text-slate-900 tracking-tight">
-            Termora AI Chat
+            ContractLens AI Chat
           </h1>
           <p className="text-xs text-slate-500 mt-0.5 font-medium">
             Ask questions about your contracts, risks, and savings

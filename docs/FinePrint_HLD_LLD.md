@@ -1,4 +1,4 @@
-# Termora
+# ContractLens
 ## High-Level Design (HLD) & Low-Level Design (LLD)
 ### v2 — Updated with MCP (Model Context Protocol) Connector Architecture
 
@@ -8,7 +8,7 @@
 
 ## A.1 Purpose
 
-This document defines the system architecture for **Termora**, an AI agent pipeline that scans a company's contracts, extracts renewal/pricing risk, cross-references usage data, and recommends (with human approval) actions to reduce wasted SaaS/vendor spend — then verifies whether those actions worked.
+This document defines the system architecture for **ContractLens**, an AI agent pipeline that scans a company's contracts, extracts renewal/pricing risk, cross-references usage data, and recommends (with human approval) actions to reduce wasted SaaS/vendor spend — then verifies whether those actions worked.
 
 This revision updates the connector layer to use **MCP (Model Context Protocol) servers** for all external tool access (Drive, Gmail, Slack, Okta) instead of hand-written API clients, per architectural decision ADR-001 (see A.8).
 
@@ -30,7 +30,7 @@ This revision updates the connector layer to use **MCP (Model Context Protocol) 
                                     │  (MCP protocol - tool calls)
                                     ▼
                     ┌─────────────────────────────────────┐
-                    │            Termora                  │
+                    │            ContractLens                  │
                     │                                       │
                     │   Ingestion → Agents → Decision →     │
                     │   Human Approval → Action → Verify    │
@@ -217,7 +217,7 @@ mcp_client_manager.disconnect(connection_id) -> revokes/clears session
 
 ### B.2.2 MCP Servers Used
 
-| MCP Server | Provider type | Tools consumed by Termora |
+| MCP Server | Provider type | Tools consumed by ContractLens |
 |---|---|---|
 | **Drive MCP** | Existing/community server | `list_files(folder_id)`, `read_file(file_id)`, `watch_folder(folder_id)` |
 | **Gmail MCP** | Existing/community server | `search_emails(query)`, `get_attachment(message_id, attachment_id)` |
@@ -395,3 +395,4 @@ GET    /dashboard/summary                             (total exposure, savings r
 ---
 
 *This HLD/LLD is scoped for MVP delivery. The MCP-based connector architecture (ADR-001) is designed to make future connector additions (QuickBooks, DocuSign, HubSpot, etc.) low-effort — each is simply a new MCP server connection, not a new integration subsystem.*
+

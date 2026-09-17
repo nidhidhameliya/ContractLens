@@ -1,5 +1,5 @@
 """
-Termora — LangGraph State Definition
+ContractLens — LangGraph State Definition
 The ContractScanState TypedDict flows through every node in the graph.
 All agent outputs accumulate here and are checkpointed to Postgres between nodes.
 
@@ -70,3 +70,4 @@ class ContractScanState(TypedDict):
 
     # Routing signal for conditional edges
     route: str                            # "continue" | "manual_review" | "awaiting_approval" | "done"
+

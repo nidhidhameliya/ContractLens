@@ -1,5 +1,5 @@
 """
-Termora — Deduplication
+ContractLens — Deduplication
 Prevents redundant contract processing using SHA-256 file hashing.
 A file is a duplicate if it has the same source_file_id + file_hash.
 If the hash differs (updated file), it triggers a re-scan.
@@ -54,3 +54,4 @@ def check_duplicate(
     # Same file ID, different hash → file was updated
     logger.info(f"Updated file detected: source_file_id={source_file_id}. Will re-scan.")
     return False, existing  # Re-scan with updated content
+

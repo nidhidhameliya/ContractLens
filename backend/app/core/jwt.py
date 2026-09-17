@@ -1,5 +1,5 @@
 """
-Termora — JWT Authentication
+ContractLens — JWT Authentication
 Handles token creation, validation, and current user extraction.
 """
 
@@ -53,3 +53,4 @@ def get_current_user(
     if user is None:
         raise credentials_exception
     return user
+

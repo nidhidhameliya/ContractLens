@@ -78,7 +78,7 @@ export default function Sidebar({ collapsed, onToggle }) {
   }, []);
 
   const logout = () => {
-    localStorage.removeItem("Termora_token");
+    localStorage.removeItem("ContractLens_token");
     router.push("/login");
   };
 
@@ -139,7 +139,7 @@ export default function Sidebar({ collapsed, onToggle }) {
                 whiteSpace: "nowrap",
               }}
             >
-              Termora
+              ContractLens
             </p>
             <p
               style={{

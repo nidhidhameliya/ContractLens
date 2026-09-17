@@ -1,5 +1,5 @@
 """
-Termora — MCP Credential Encryption Utilities
+ContractLens — MCP Credential Encryption Utilities
 Encrypts/decrypts MCP connection credentials at rest using AES-256.
 Credentials are NEVER stored in plaintext — NFR-4 / B.6 compliance.
 """
@@ -31,3 +31,4 @@ def decrypt_credentials(ciphertext: str) -> str:
     """Decrypts an encrypted credential string back to plaintext."""
     f = _get_fernet()
     return f.decrypt(ciphertext.encode()).decode()
+

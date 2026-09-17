@@ -1,5 +1,5 @@
 """
-Termora — Agent Orchestration Service
+ContractLens — Agent Orchestration Service
 A standalone FastAPI microservice that hosts the LangGraph pipeline
 and MCP integrations.
 
@@ -10,7 +10,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
-    title="Termora Agent Service",
+    title="ContractLens Agent Service",
     description="LangGraph pipeline & MCP integration microservice",
     version="1.0.0",
     docs_url="/docs",
@@ -27,7 +27,7 @@ app.add_middleware(
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "service": "Termora Agent Service"}
+    return {"status": "ok", "service": "ContractLens Agent Service"}
 
 
 @app.post("/scan")
@@ -41,7 +41,7 @@ def scan_contract(payload: dict):
     # Ensure the backend package is importable
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-    from app.intelligence.graph import Termora_graph
+    from app.intelligence.graph import ContractLens_graph
 
     contract_id = payload.get("contract_id")
     org_id = payload.get("org_id")
@@ -61,5 +61,6 @@ def scan_contract(payload: dict):
         "route": "continue",
     }
 
-    final_state = Termora_graph.invoke(initial_state)
+    final_state = ContractLens_graph.invoke(initial_state)
     return {"status": "complete", "state": final_state}
+

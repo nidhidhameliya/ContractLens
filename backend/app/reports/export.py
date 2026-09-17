@@ -1,5 +1,5 @@
 """
-Termora — Export API
+ContractLens — Export API
 Exports contracts and decisions to CSV format for audit and reporting.
 """
 
@@ -71,7 +71,7 @@ def export_contracts_csv(
     return StreamingResponse(
         iter([output.getvalue()]),
         media_type="text/csv",
-        headers={"Content-Disposition": "attachment; filename=Termora_contracts.csv"},
+        headers={"Content-Disposition": "attachment; filename=ContractLens_contracts.csv"},
     )
 
 
@@ -126,5 +126,6 @@ def export_decisions_csv(
     return StreamingResponse(
         iter([output.getvalue()]),
         media_type="text/csv",
-        headers={"Content-Disposition": "attachment; filename=Termora_decisions.csv"},
+        headers={"Content-Disposition": "attachment; filename=ContractLens_decisions.csv"},
     )
+

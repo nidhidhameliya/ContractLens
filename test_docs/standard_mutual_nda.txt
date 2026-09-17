@@ -1,6 +1,6 @@
 MUTUAL NON-DISCLOSURE AGREEMENT
 
-This Mutual Non-Disclosure Agreement ("Agreement") is made on October 1, 2026, between Termora Corp ("Company") and Acme Innovations Inc. ("Partner").
+This Mutual Non-Disclosure Agreement ("Agreement") is made on October 1, 2026, between ContractLens Corp ("Company") and Acme Innovations Inc. ("Partner").
 
 1. PURPOSE
 The parties intend to engage in discussions regarding a potential business relationship or transaction (the "Purpose"). In connection with these discussions, it may be necessary for the parties to disclose to each other certain confidential and proprietary information.
@@ -27,3 +27,4 @@ This Agreement shall remain in effect for a period of two (2) years from the dat
 
 6. MISCELLANEOUS
 This Agreement constitutes the entire agreement between the parties concerning the subject matter hereof. No amendment or modification shall be valid unless made in writing and signed by both parties. This Agreement shall be governed by the laws of the State of California.
+

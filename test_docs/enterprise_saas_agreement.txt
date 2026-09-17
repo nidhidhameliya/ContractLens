@@ -1,6 +1,6 @@
 ENTERPRISE CLOUD SOFTWARE AGREEMENT
 
-This Agreement is between Termora Corp ("Customer") and CloudScale SaaS Solutions ("Provider").
+This Agreement is between ContractLens Corp ("Customer") and CloudScale SaaS Solutions ("Provider").
 
 1. SUBSCRIPTION SERVICES
 Provider grants Customer a limited, non-transferable license to access the CloudScale CRM platform for 500 users.
@@ -19,3 +19,4 @@ Customer retains ownership of all customer data uploaded to the platform. Howeve
 
 6. LIMITATION OF LIABILITY
 Provider's liability is limited to the fees paid by Customer in the twelve (12) months preceding the claim. In no event shall Provider be liable for indirect, incidental, or consequential damages.
+

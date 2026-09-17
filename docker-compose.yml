@@ -1,26 +1,26 @@
 services:
   db:
     image: pgvector/pgvector:pg16
-    container_name: Termora_postgres
+    container_name: ContractLens_postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: Termora
-      POSTGRES_PASSWORD: Termora_secret
-      POSTGRES_DB: Termora_db
+      POSTGRES_USER: ContractLens
+      POSTGRES_PASSWORD: ContractLens_secret
+      POSTGRES_DB: ContractLens_db
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./backend/db_init/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U Termora -d Termora_db"]
+      test: ["CMD-SHELL", "pg_isready -U ContractLens -d ContractLens_db"]
       interval: 10s
       timeout: 5s
       retries: 5
 
   redis:
     image: redis:7-alpine
-    container_name: Termora_redis
+    container_name: ContractLens_redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -37,14 +37,14 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: Termora_api
+    container_name: ContractLens_api
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     ports:
       - "8000:8000"
     volumes:
       - ./backend:/app
     environment:
-      - DATABASE_URL=postgresql://Termora:Termora_secret@db:5432/Termora_db
+      - DATABASE_URL=postgresql://ContractLens:ContractLens_secret@db:5432/ContractLens_db
       - REDIS_URL=redis://redis:6379/0
       - AGENT_SERVICE_URL=http://agent_service:8001
     depends_on:
@@ -58,7 +58,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: Termora_agent
+    container_name: ContractLens_agent
     command: uvicorn services.agent_service.main:app --host 0.0.0.0 --port 8001
     ports:
       - "8001:8001"
@@ -66,7 +66,7 @@ services:
       - ./backend:/app
       - chromadb_store:/app/.chromadb_store
     environment:
-      - DATABASE_URL=postgresql://Termora:Termora_secret@db:5432/Termora_db
+      - DATABASE_URL=postgresql://ContractLens:ContractLens_secret@db:5432/ContractLens_db
     depends_on:
       db:
         condition: service_healthy
@@ -76,14 +76,14 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: Termora_ingestion
+    container_name: ContractLens_ingestion
     command: uvicorn services.ingestion_service.main:app --host 0.0.0.0 --port 8002
     ports:
       - "8002:8002"
     volumes:
       - ./backend:/app
     environment:
-      - DATABASE_URL=postgresql://Termora:Termora_secret@db:5432/Termora_db
+      - DATABASE_URL=postgresql://ContractLens:ContractLens_secret@db:5432/ContractLens_db
       - REDIS_URL=redis://redis:6379/0
     depends_on:
       db:
@@ -95,4 +95,5 @@ volumes:
   pgdata:
   redisdata:
   chromadb_store:
+
 

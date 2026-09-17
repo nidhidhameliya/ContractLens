@@ -1,5 +1,5 @@
 """
-Termora — Email Notification Service
+ContractLens — Email Notification Service
 Sends transactional emails for all key pipeline events using Gmail SMTP.
 """
 
@@ -23,7 +23,7 @@ def _send(to: str, subject: str, html: str, text: str = "") -> bool:
     try:
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
-        msg["From"] = f"Termora AI <{settings.mail_from}>"
+        msg["From"] = f"ContractLens AI <{settings.mail_from}>"
         msg["To"] = to
         if text:
             msg.attach(MIMEText(text, "plain"))
@@ -67,9 +67,9 @@ th{{text-align:left;font-size:11px;color:#888;text-transform:uppercase;padding:8
 td{{padding:10px 0;border-bottom:1px solid #1e1e3a;font-size:14px;color:#ccc}}
 .preview{{background:#12122a;border-radius:8px;padding:16px 20px;margin:16px 0;border:1px solid #2d2d5e}}
 </style></head><body><div class="card">
-<div class="hdr"><h1>🔍 Termora</h1><p>AI Contract Risk Monitor</p></div>
+<div class="hdr"><h1>🔍 ContractLens</h1><p>AI Contract Risk Monitor</p></div>
 <div class="body">{content}</div>
-<div class="ftr">Termora · AI-Powered Contract Intelligence · {datetime.now().strftime('%d %b %Y, %H:%M IST')}</div>
+<div class="ftr">ContractLens · AI-Powered Contract Intelligence · {datetime.now().strftime('%d %b %Y, %H:%M IST')}</div>
 </div></body></html>"""
 
 
@@ -156,7 +156,7 @@ def send_action_confirmation(
         <span class="badge info">✅ ACTION EXECUTED</span>
         <h2>{action} sent to {vendor_name}</h2>
         <p class="sub">Approved by <strong style="color:white">{executed_by}</strong>.
-        Termora will verify the outcome in 30 days.</p>
+        ContractLens will verify the outcome in 30 days.</p>
         <div class="metric"><div class="lbl">Action Type</div><div class="val" style="font-size:16px">{action}</div></div>
         <div class="preview">
           <div class="lbl" style="margin-bottom:8px">Message Preview</div>
@@ -222,6 +222,7 @@ def send_weekly_digest(
         <a href="{url}" class="btn">Open Dashboard →</a>
     """)
     return _send(
-        to, f"📊 Termora Weekly: {high_risk_count} high-risk · ${estimated_savings:,.0f} savings identified",
+        to, f"📊 ContractLens Weekly: {high_risk_count} high-risk · ${estimated_savings:,.0f} savings identified",
         html, f"WEEKLY DIGEST\nContracts: {total_contracts} | High Risk: {high_risk_count} | Savings: ${estimated_savings:,.0f}\n{url}"
     )
+

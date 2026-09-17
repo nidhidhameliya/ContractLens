@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Termora — Premium Contract Intelligence",
+  title: "ContractLens — Premium Contract Intelligence",
   description:
   "Enterprise-grade AI contract risk monitoring and automated approval system."
 };
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
               (function() {
                 // ── 1. Apply theme before first paint ────────────────────────────
                 try {
-                  var saved = localStorage.getItem('Termora_theme');
+                  var saved = localStorage.getItem('ContractLens_theme');
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                   if (saved === 'dark' || (!saved && prefersDark)) {
                     document.documentElement.classList.add('dark');

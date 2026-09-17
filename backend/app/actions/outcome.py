@@ -1,5 +1,5 @@
 """
-Termora — Outcome Model
+ContractLens — Outcome Model
 Records the verified real-world result of an executed action.
 Compared against the decision's expected_impact to classify success/failure.
 """
@@ -38,3 +38,4 @@ class Outcome(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     def __repr__(self) -> str:
         return f"<Outcome decision={self.decision_id} result={self.result} delta=${self.spend_delta_amount}>"
+

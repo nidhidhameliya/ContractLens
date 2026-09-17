@@ -1,14 +1,14 @@
-# Termora: As-Built Software Requirements Specification (SRS) & System Design
+# ContractLens: As-Built Software Requirements Specification (SRS) & System Design
 
 ## 1. Introduction
 
-**Termora** is an AI-powered contract risk monitoring and automated approval system. It combines the reasoning capabilities of Large Language Models (LLMs) with strict, deterministic business rules to evaluate, route, and execute business decisions regarding third-party contracts.
+**ContractLens** is an AI-powered contract risk monitoring and automated approval system. It combines the reasoning capabilities of Large Language Models (LLMs) with strict, deterministic business rules to evaluate, route, and execute business decisions regarding third-party contracts.
 
-This document reflects the **As-Built** state of the Termora codebase, serving as a consolidated SRS and System Design reference.
+This document reflects the **As-Built** state of the ContractLens codebase, serving as a consolidated SRS and System Design reference.
 
 ## 2. High-Level Architecture
 
-Termora utilizes a modern, decoupled client-server architecture:
+ContractLens utilizes a modern, decoupled client-server architecture:
 
 - **Frontend:** Next.js 16 (React) with TailwindCSS and Lucide-React for styling.
 - **Backend API:** FastAPI (Python) serving RESTful endpoints.
@@ -50,7 +50,7 @@ The PostgreSQL database is organized into the following primary entities:
 
 ### 4.2 Deterministic Guardrails (Business Rules)
 
-Termora enforces strict rules outside of the LLM prompt to guarantee consistency.
+ContractLens enforces strict rules outside of the LLM prompt to guarantee consistency.
 
 - **Financial Thresholds:** If the estimated impact of a contract exceeds the `approval_threshold_usd`, the decision is deterministically flagged as `requires_human_approval = True`.
 - **Second Approver Routing:** If the impact exceeds an even higher `second_approver_threshold_usd`, the system flags `requires_second_approver = True`, requiring multi-stage executive sign-off.
@@ -94,3 +94,4 @@ The Next.js application acts as the control plane for the system.
 - **Row-Level Isolation:** All database queries are filtered by Tenant ID to prevent data leakage between organizations.
 - **Mock vs. Real Environments:** The system supports a `MOCK_MCP` environment variable. When enabled, the `MockMcpSession` intercepts tool calls, allowing UI development and LLM prompt testing without requiring live Slack or Google Drive credentials.
 - **API Framework:** FastAPI utilizes Pydantic V2 for strict request validation and serialization, preventing injection attacks.
+

@@ -1,5 +1,5 @@
 """
-Termora — Finance Agent (LLM-powered)
+ContractLens — Finance Agent (LLM-powered)
 Delegates financial estimation to the LLM rather than deterministic Python math.
 The LLM uses its reading of the contract clauses + risk context to estimate
 annual cost, potential savings, and exposure.
@@ -116,3 +116,4 @@ def run_finance_agent(state: ContractScanState) -> ContractScanState:
                 "llm_confidence_note": f"Estimation failed: {e}",
             }
         }
+

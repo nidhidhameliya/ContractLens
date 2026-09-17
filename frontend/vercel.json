@@ -3,6 +3,7 @@
   "outputDirectory": ".next",
   "framework": "nextjs",
   "env": {
-    "NEXT_PUBLIC_API_URL": "https://termora-api.onrender.com"
+    "NEXT_PUBLIC_API_URL": "https://ContractLens-api.onrender.com"
   }
 }
+

@@ -1,6 +1,6 @@
 MASTER SERVICES AGREEMENT
 
-This Master Services Agreement ("Agreement") is entered into by and between Termora Corp ("Client") and Global Marketing Dynamics LLC ("Agency"), effective as of October 1, 2026.
+This Master Services Agreement ("Agreement") is entered into by and between ContractLens Corp ("Client") and Global Marketing Dynamics LLC ("Agency"), effective as of October 1, 2026.
 
 1. SERVICES
 Agency agrees to provide digital marketing, SEO, and brand management services as described in the attached Statement of Work (SOW).
@@ -22,3 +22,4 @@ All marketing materials, campaigns, and concepts created by Agency shall remain 
 
 7. GOVERNING LAW
 This Agreement shall be governed by the laws of the State of Delaware. Any disputes shall be resolved through binding arbitration in Wilmington, Delaware.
+

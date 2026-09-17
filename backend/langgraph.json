@@ -1,7 +1,8 @@
 {
   "dependencies": ["."],
   "graphs": {
-    "Termora_graph": "./app/orchestrator/graph.py:Termora_graph"
+    "ContractLens_graph": "./app/orchestrator/graph.py:ContractLens_graph"
   },
   "env": ".env"
 }
+

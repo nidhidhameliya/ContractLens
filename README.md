@@ -1,12 +1,12 @@
-# Termora
+# ContractLens
 
 ### Turn contracts into controlled decisions.
 
-**Termora** is an AI-powered contract intelligence and governance platform that continuously identifies contractual risk, estimates financial exposure, and recommends actions — while deterministic policies and human approvals control what happens next.
+**ContractLens** is an AI-powered contract intelligence and governance platform that continuously identifies contractual risk, estimates financial exposure, and recommends actions — while deterministic policies and human approvals control what happens next.
 
 Contracts don't just contain information. They contain **financial commitments, operational dependencies, deadlines, penalties, and risks**.
 
-Termora turns those contracts into **actionable, governed decisions**.
+ContractLens turns those contracts into **actionable, governed decisions**.
 
 ---
 
@@ -29,19 +29,19 @@ Legal and procurement teams cannot manually monitor every contract continuously.
 
 The result is expensive surprises.
 
-**Termora provides an always-on intelligence layer over the contract portfolio.**
+**ContractLens provides an always-on intelligence layer over the contract portfolio.**
 
 ---
 
-## What Termora Does
+## What ContractLens Does
 
-Termora follows a simple principle:
+ContractLens follows a simple principle:
 
 > **AI understands. Policies govern. Humans decide. Systems execute.**
 
 ### 1. Understand
 
-Termora ingests contracts and uses AI to extract:
+ContractLens ingests contracts and uses AI to extract:
 
 * Parties
 * Contract value
@@ -64,7 +64,7 @@ For example:
 
 > Clause 4 requires the customer to pay the remaining contract balance plus a 30% termination penalty.
 
-Termora doesn't simply flag the clause.
+ContractLens doesn't simply flag the clause.
 
 It evaluates its potential **business and financial impact**.
 
@@ -90,7 +90,7 @@ High
 
 ### 4. Govern
 
-This is where Termora differs from a traditional AI contract analyzer.
+This is where ContractLens differs from a traditional AI contract analyzer.
 
 AI recommendations are **not automatically trusted**.
 
@@ -112,7 +112,7 @@ The policy engine, not the LLM, determines whether an action can proceed.
 
 ### 5. Execute
 
-Once an authorized person approves the recommendation, Termora can generate and execute downstream actions through integrated tools.
+Once an authorized person approves the recommendation, ContractLens can generate and execute downstream actions through integrated tools.
 
 For example:
 
@@ -126,13 +126,13 @@ Execution happens only after the appropriate governance checks have passed.
 
 ---
 
-# Why Termora?
+# Why ContractLens?
 
 Most contract AI products focus primarily on **finding information**.
 
-Termora focuses on what happens **after information is found**.
+ContractLens focuses on what happens **after information is found**.
 
-| Traditional Contract AI | Termora                      |
+| Traditional Contract AI | ContractLens                      |
 | ----------------------- | ---------------------------- |
 | Extracts clauses        | Extracts + evaluates clauses |
 | Finds risks             | Quantifies potential impact  |
@@ -142,7 +142,7 @@ Termora focuses on what happens **after information is found**.
 | Passive analysis        | Continuous monitoring        |
 | Information retrieval   | Decision + action lifecycle  |
 
-Termora is designed to bridge the gap between:
+ContractLens is designed to bridge the gap between:
 
 **Contract → Risk → Decision → Approval → Action**
 
@@ -150,11 +150,11 @@ Termora is designed to bridge the gap between:
 
 # Architecture
 
-Termora uses a decoupled architecture designed around reliability, auditability, and controlled AI execution.
+ContractLens uses a decoupled architecture designed around reliability, auditability, and controlled AI execution.
 
 ```text
                          ┌─────────────────────┐
-                         │      Termora UI     │
+                         │      ContractLens UI     │
                          │   Next.js / React   │
                          └──────────┬──────────┘
                                     │
@@ -235,7 +235,7 @@ LangGraph orchestrates the contract analysis workflow as a controlled state mach
 
 ### Integrations
 
-Termora uses the **Model Context Protocol (MCP)** to connect AI workflows with external systems.
+ContractLens uses the **Model Context Protocol (MCP)** to connect AI workflows with external systems.
 
 This allows the platform to interact with tools such as:
 
@@ -250,7 +250,7 @@ without tightly coupling the core application to every individual integration.
 
 # AI + Deterministic Governance
 
-This is the core architectural principle behind Termora.
+This is the core architectural principle behind ContractLens.
 
 LLMs are probabilistic.
 
@@ -315,7 +315,7 @@ high_risk_marketing_vendor.pdf
 
 **Annual Value:** $150,000
 
-Termora identifies:
+ContractLens identifies:
 
 > **Clause 4:** Early termination requires payment of the remaining contract balance plus a 30% penalty.
 
@@ -347,7 +347,7 @@ Organization policy:
 approval_threshold_usd = $5,000
 ```
 
-Termora evaluates:
+ContractLens evaluates:
 
 ```text
 $45,000 > $5,000
@@ -368,7 +368,7 @@ The AI cannot bypass this decision.
 
 The manager opens the **Approvals** workspace.
 
-Termora displays two separate sections:
+ContractLens displays two separate sections:
 
 **AI Analysis**
 
@@ -391,7 +391,7 @@ The manager approves the action.
 
 ### Action
 
-Termora generates a draft internal notification:
+ContractLens generates a draft internal notification:
 
 ```text
 High-risk contract detected for Global Marketing
@@ -440,7 +440,7 @@ This makes it possible to answer:
 * What action was executed?
 * When did it happen?
 
-Termora treats **auditability as a first-class product requirement**, not an afterthought.
+ContractLens treats **auditability as a first-class product requirement**, not an afterthought.
 
 ---
 
@@ -474,7 +474,7 @@ This separation allows AI analysis, governance, approvals, and execution to rema
 
 # Human-in-the-Loop
 
-Termora is designed around **controlled autonomy**, not unrestricted automation.
+ContractLens is designed around **controlled autonomy**, not unrestricted automation.
 
 The system can autonomously:
 
@@ -512,7 +512,7 @@ AI provides analysis and recommendations, but does not become the final authorit
 
 ### Automation with boundaries
 
-Termora automates workflows while respecting explicit organizational policies.
+ContractLens automates workflows while respecting explicit organizational policies.
 
 ### Explainable decisions
 
@@ -532,7 +532,7 @@ It's turning contractual intelligence into controlled business action.
 
 # Product Experience
 
-Termora is organized around the lifecycle of contractual risk.
+ContractLens is organized around the lifecycle of contractual risk.
 
 ### Dashboard
 
@@ -579,11 +579,11 @@ Inspect the complete history of contract intelligence and actions.
 
 # The Bigger Vision
 
-Termora isn't designed to be another PDF analyzer.
+ContractLens isn't designed to be another PDF analyzer.
 
 The long-term vision is to become the **decision and governance layer for enterprise contracts**.
 
-A future Termora workflow looks like:
+A future ContractLens workflow looks like:
 
 ```text
 New Contract
@@ -611,16 +611,17 @@ Instead of asking:
 
 > **"What does this contract say?"**
 
-Termora helps organizations answer:
+ContractLens helps organizations answer:
 
 > **"What does this contract mean for our business, what should we do about it, and are we authorized to do it?"**
 
 ---
 
-# Termora
+# ContractLens
 
 ### Turn contracts into controlled decisions.
 
 **AI-powered contract intelligence.
 Deterministic governance.
 Human-controlled execution.**
+

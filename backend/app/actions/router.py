@@ -1,5 +1,5 @@
 """
-Termora — Actions API Router
+ContractLens — Actions API Router
 View draft actions and trigger human-confirmed sending via MCP.
 """
 
@@ -132,7 +132,7 @@ def _execute_via_mcp(action: Action, user: User, db: Session) -> str:
 
     elif action.action_type.value == "slack_alert":
         channel = payload.get("channel", "#general")
-        text = payload.get("body", "Contract alert from Termora")
+        text = payload.get("body", "Contract alert from ContractLens")
         slack_tools.post_message(str(user.org_id), channel, text, db)
         return "slack_mcp"
 
@@ -166,3 +166,4 @@ def _serialize_action(action: Action) -> dict:
         "executed_at": action.executed_at.isoformat() if action.executed_at else None,
         "created_at": action.created_at.isoformat() if action.created_at else None,
     }
+

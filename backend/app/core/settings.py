@@ -1,5 +1,5 @@
 """
-Termora — OrgSettings API Router
+ContractLens — OrgSettings API Router
 Allows Org Admins to configure business rules, thresholds, and display preferences.
 """
 
@@ -82,3 +82,4 @@ def update_org_settings(
         second_approver_threshold_usd=settings.second_approver_threshold_usd,
         display_currency=getattr(settings, "display_currency", "USD"),
     )
+

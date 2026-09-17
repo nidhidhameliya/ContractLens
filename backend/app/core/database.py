@@ -1,5 +1,5 @@
 """
-Termora — Database Engine & Session Management
+ContractLens — Database Engine & Session Management
 Uses SQLAlchemy 2.0 async-compatible engine with per-request session scoping.
 All queries MUST go through get_db() dependency to ensure org_id scoping.
 """
@@ -52,3 +52,4 @@ def get_db() -> Generator[Session, None, None]:
         yield db
     finally:
         db.close()
+

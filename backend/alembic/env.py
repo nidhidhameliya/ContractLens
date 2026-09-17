@@ -1,5 +1,5 @@
 """
-Termora — Alembic env.py
+ContractLens — Alembic env.py
 Configured to use our SQLAlchemy models for autogenerate.
 """
 
@@ -57,3 +57,4 @@ if context.is_offline_mode():
     run_migrations_offline()
 else:
     run_migrations_online()
+

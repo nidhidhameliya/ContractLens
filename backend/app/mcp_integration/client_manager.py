@@ -1,5 +1,5 @@
 """
-Termora — MCP Client Manager
+ContractLens — MCP Client Manager
 Manages per-org MCP server sessions.
 Handles session lifecycle: connect, verify, disconnect.
 When MOCK_MCP=true, returns stub clients without live credentials.
@@ -188,3 +188,4 @@ class McpClientManager:
 
 # Singleton instance
 mcp_client_manager = McpClientManager()
+

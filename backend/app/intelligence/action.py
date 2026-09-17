@@ -1,5 +1,5 @@
 """
-Termora — Action Agent
+ContractLens — Action Agent
 Drafts action artifacts (emails, Slack messages) after human approval.
 NEVER sends autonomously — only creates draft stored in DB for human confirmation (FR-ACT-2).
 """
@@ -76,3 +76,4 @@ def run_action_agent(decision_output: dict, clauses: dict, action_type: str = "e
             "recipient_hint": f"{clauses.get('vendor_name', 'Vendor')} Account Manager",
             "action_type": action_type,
         }
+

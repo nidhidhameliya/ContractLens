@@ -1,5 +1,5 @@
 """
-Termora — Contract Clause Model
+ContractLens — Contract Clause Model
 Structured output from the Detection Agent for a given contract.
 Stores all key fields extracted from the raw contract text via LLM.
 """
@@ -38,3 +38,4 @@ class ContractClause(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     def __repr__(self) -> str:
         return f"<ContractClause contract={self.contract_id} vendor={self.vendor_name!r} confidence={self.extraction_confidence}>"
+

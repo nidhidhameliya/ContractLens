@@ -1,5 +1,5 @@
 """
-Termora — Risk Agent
+ContractLens — Risk Agent
 Classifies contract risk using extracted clauses + optional Okta usage signals.
 Never fabricates usage data when Okta MCP is unavailable (FR-RISK-3).
 """
@@ -79,3 +79,4 @@ def run_risk_agent(state: ContractScanState) -> ContractScanState:
         return {**state, "risk_output": {
             "risk_type": "none", "risk_severity": "low", "evidence": f"Risk assessment failed: {e}"
         }}
+

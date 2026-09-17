@@ -1,5 +1,5 @@
 """
-Termora — RBAC (Role-Based Access Control)
+ContractLens — RBAC (Role-Based Access Control)
 Provides FastAPI dependencies for role enforcement.
 """
 
@@ -30,3 +30,4 @@ def require_role(allowed_roles: list[str]):
 require_admin = require_role(["admin"])
 require_user_or_admin = require_role(["admin", "user"])
 require_any_role = require_role(["admin", "user", "viewer"])
+

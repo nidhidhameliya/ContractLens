@@ -1,5 +1,5 @@
 """
-Termora — Ingestion Service
+ContractLens — Ingestion Service
 A standalone FastAPI microservice that handles document parsing,
 deduplication, and the periodic scan schedule. Separate from the
 API Gateway so ingestion load doesn't block request handling.
@@ -29,7 +29,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Termora Ingestion Service",
+    title="ContractLens Ingestion Service",
     description="Document parsing, deduplication & periodic ingestion microservice",
     version="1.0.0",
     docs_url="/docs",
@@ -47,7 +47,7 @@ app.add_middleware(
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "service": "Termora Ingestion Service"}
+    return {"status": "ok", "service": "ContractLens Ingestion Service"}
 
 
 @app.post("/parse")
@@ -76,3 +76,4 @@ async def parse_document(file: UploadFile = File(...)):
         }
     except Exception as e:
         raise HTTPException(status_code=422, detail=f"Parse error: {e}")
+

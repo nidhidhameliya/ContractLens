@@ -1,5 +1,5 @@
 """
-Termora — Data Retention Jobs
+ContractLens — Data Retention Jobs
 Deletes data older than the configured retention period (FR: 24 months for audit logs).
 """
 
@@ -36,3 +36,4 @@ def run_retention_cleanup():
 
 if __name__ == "__main__":
     run_retention_cleanup()
+

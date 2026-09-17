@@ -1,5 +1,5 @@
 """
-Termora — Gmail MCP Tool Wrappers
+ContractLens — Gmail MCP Tool Wrappers
 Exposes search_emails and get_attachment operations.
 """
 
@@ -68,3 +68,4 @@ def get_attachment(org_id: str, message_id: str, attachment_id: str, db: Session
         result_summary=f"Fetched {len(file_bytes)} bytes",
     )
     return file_bytes, log
+

@@ -1,1 +1,2 @@
-# Termora — App Package
+# ContractLens — App Package
+

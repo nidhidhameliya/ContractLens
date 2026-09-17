@@ -1,6 +1,6 @@
 MASTER HOSTING AND INFRASTRUCTURE AGREEMENT
 
-This Agreement is made by and between Termora Corp ("Customer") and GlobalDataHost Limited, a company registered in the Republic of Seychelles ("Host").
+This Agreement is made by and between ContractLens Corp ("Customer") and GlobalDataHost Limited, a company registered in the Republic of Seychelles ("Host").
 
 1. SERVICES
 Host shall provide dedicated server infrastructure and network connectivity.
@@ -22,3 +22,4 @@ Customer shall fully indemnify, defend, and hold harmless Host against any and a
 
 7. GOVERNING LAW AND JURISDICTION
 This Agreement shall be governed exclusively by the laws of the Republic of Seychelles. Any dispute shall be resolved via binding arbitration in Victoria, Seychelles. Customer waives any right to a class action or jury trial.
+

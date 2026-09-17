@@ -19,7 +19,7 @@ jobs:
 
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || 'test-key' }}
-      DATABASE_URL: postgresql://Termora:Termora_secret@localhost:5432/Termora_db
+      DATABASE_URL: postgresql://ContractLens:ContractLens_secret@localhost:5432/ContractLens_db
       SECRET_KEY: ci-test-secret-key
       MOCK_MCP: "true"
 
@@ -27,9 +27,9 @@ jobs:
       postgres:
         image: postgres:16-alpine
         env:
-          POSTGRES_USER: Termora
-          POSTGRES_PASSWORD: Termora_secret
-          POSTGRES_DB: Termora_db
+          POSTGRES_USER: ContractLens
+          POSTGRES_PASSWORD: ContractLens_secret
+          POSTGRES_DB: ContractLens_db
         ports:
           - 5432:5432
         options: >-
@@ -102,3 +102,4 @@ jobs:
             exit 1
           fi
           echo "✅ All CI checks passed"
+

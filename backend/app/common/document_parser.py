@@ -1,5 +1,5 @@
 """
-Termora — Document Parser
+ContractLens — Document Parser
 Converts raw file bytes (PDF/DOCX) to plain text.
 Includes OCR fallback for scanned/image-based PDFs (FR-ING-4).
 """
@@ -113,3 +113,4 @@ def _ocr_fallback(file_bytes: bytes, file_name: str) -> str:
         )
     except Exception as e:
         raise ParseFailure(f"OCR failed for {file_name}: {e}") from e
+

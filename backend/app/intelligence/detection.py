@@ -1,5 +1,5 @@
 """
-Termora — Detection Agent
+ContractLens — Detection Agent
 Extracts structured contract clauses from raw text using Groq LLM.
 Robust JSON extraction that works with any model including Qwen (think-tag aware).
 Routes to manual_review if confidence < threshold (FR-DET-3).
@@ -79,3 +79,4 @@ def run_detection_agent(state: ContractScanState) -> ContractScanState:
     except Exception as e:
         logger.error(f"[Detection Agent] Unexpected error: {e}")
         return {**state, "route": "manual_review", "error": str(e)}
+

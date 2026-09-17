@@ -1,5 +1,5 @@
 """
-Termora — Google Drive MCP Tool Wrappers
+ContractLens — Google Drive MCP Tool Wrappers
 Exposes list_files and read_file operations via the MCP Client Manager.
 All tool calls are logged for the audit trail (FR-DASH-4, NFR-5).
 """
@@ -74,3 +74,4 @@ def read_file(org_id: str, file_id: str, db: Session) -> tuple[bytes, MCPToolCal
     )
     logger.info(f"[MCP Drive] read_file org={org_id} file={file_id} → {len(file_bytes)} bytes")
     return file_bytes, log
+

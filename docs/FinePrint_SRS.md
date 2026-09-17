@@ -1,10 +1,10 @@
 # Software Requirements Specification (SRS)
-## Termora — AI Agent Pipeline for SaaS & Vendor Contract Risk Monitoring
+## ContractLens — AI Agent Pipeline for SaaS & Vendor Contract Risk Monitoring
 
 **Version:** 2.0
 **Status:** Draft for MVP
 **Document conforms to structure inspired by IEEE 830-1998**
-**Change from v1.0:** All external system connectors (Drive, Gmail, Slack, Okta) now specified via MCP (Model Context Protocol) servers rather than bespoke API clients; product renamed from Contract Sentinel to Termora.
+**Change from v1.0:** All external system connectors (Drive, Gmail, Slack, Okta) now specified via MCP (Model Context Protocol) servers rather than bespoke API clients; product renamed from Contract Sentinel to ContractLens.
 
 ---
 
@@ -25,11 +25,11 @@
 
 ## 1.1 Purpose
 
-This document specifies the software requirements for **Termora**, a multi-agent AI system that continuously monitors an organization's SaaS and vendor contracts, detects renewal and pricing risk, estimates financial exposure, and recommends actions (subject to human approval) to reduce wasted spend. It is intended for use by the development team, QA, and stakeholders as the authoritative reference for what the system must do in its MVP release.
+This document specifies the software requirements for **ContractLens**, a multi-agent AI system that continuously monitors an organization's SaaS and vendor contracts, detects renewal and pricing risk, estimates financial exposure, and recommends actions (subject to human approval) to reduce wasted spend. It is intended for use by the development team, QA, and stakeholders as the authoritative reference for what the system must do in its MVP release.
 
 ## 1.2 Scope
 
-Termora will:
+ContractLens will:
 
 - Ingest contract documents from connected sources (Google Drive, Gmail attachments, manual upload) via standardized **MCP server connections**.
 - Extract structured contract terms (renewal date, auto-renew status, price escalation, notice period) using LLM-based document understanding.
@@ -52,19 +52,19 @@ Termora will:
 | **Orchestrator** | The component (LangGraph state machine) that sequences agent execution per contract. |
 | **MCP (Model Context Protocol)** | A standardized protocol through which AI agents discover and call external tools (e.g., file access, messaging, identity/usage data) exposed by an MCP server, without a bespoke integration per system. |
 | **MCP Server** | A service implementing the MCP specification that exposes a defined set of tools (e.g., `list_files`, `post_message`) for a specific external system (Drive, Gmail, Slack, Okta). |
-| **MCP Client** | The component within Termora that establishes a session with an MCP server and issues tool calls on behalf of an agent. |
+| **MCP Client** | The component within ContractLens that establishes a session with an MCP server and issues tool calls on behalf of an agent. |
 | **Clause extraction** | The process of converting unstructured contract text into structured JSON fields. |
 | **Decision** | The structured recommendation object produced for a contract, combining agent outputs. |
 | **Action** | A concrete artifact (email draft, Slack message, task) generated from an approved decision, executed via an MCP tool call. |
 | **Outcome** | The measured real-world result of an executed action, compared against the expected impact. |
-| **Org / Tenant** | A single customer organization using Termora; all data is isolated per org. |
+| **Org / Tenant** | A single customer organization using ContractLens; all data is isolated per org. |
 | **RBAC** | Role-Based Access Control. |
 | **LLM** | Large Language Model (e.g., GPT-4/5-class or Claude-class model) used for reasoning and extraction tasks. |
 
 ## 1.4 References
 
 - Original concept document: *AI Business Operator* (internal project source document).
-- Refined concept: *Termora* HLD/LLD document, v2 (internal, this project series — includes ADR-001 on MCP adoption).
+- Refined concept: *ContractLens* HLD/LLD document, v2 (internal, this project series — includes ADR-001 on MCP adoption).
 - IEEE Std 830-1998, *Recommended Practice for Software Requirements Specifications* (structural reference only).
 - Model Context Protocol specification (external standard governing MCP server/client behavior).
 
@@ -78,10 +78,10 @@ Section 2 describes the product context and constraints. Section 3 enumerates fu
 
 ## 2.1 Product Perspective
 
-Termora is a **new, standalone product** that connects to a customer's existing document and identity systems (Drive, Gmail, Okta) via MCP servers, rather than replacing them or requiring bespoke integration work. It does not require the customer to migrate contracts into a new repository. It operates as a scan-and-recommend layer, not a contract lifecycle management (CLM) system of record.
+ContractLens is a **new, standalone product** that connects to a customer's existing document and identity systems (Drive, Gmail, Okta) via MCP servers, rather than replacing them or requiring bespoke integration work. It does not require the customer to migrate contracts into a new repository. It operates as a scan-and-recommend layer, not a contract lifecycle management (CLM) system of record.
 
 ```text
-   Existing Systems         MCP Servers            Termora                Human Owner
+   Existing Systems         MCP Servers            ContractLens                Human Owner
  ┌─────────────────┐   ┌──────────────────┐   ┌─────────────────────┐   ┌───────────────┐
  │ Google Drive      │   │ Drive MCP          │   │ Ingestion → Agents → │   │ Finance /      │
  │ Gmail attachments   │──►│ Gmail MCP          │──►│ Decision → Approval →│──►│ Procurement    │
@@ -132,11 +132,11 @@ Termora is a **new, standalone product** that connects to a customer's existing 
 
 ## 2.6 Assumptions and Dependencies
 
-- Customers grant permission for Termora to establish MCP server connections to their Google Drive and/or Gmail (and optionally Slack, Okta); without this, ingestion and notification cannot function.
+- Customers grant permission for ContractLens to establish MCP server connections to their Google Drive and/or Gmail (and optionally Slack, Okta); without this, ingestion and notification cannot function.
 - Contract documents are primarily in English and in text-extractable or OCR-able PDF/DOCX format.
 - Usage-signal data (e.g., via Okta MCP) is optional for MVP; the system must degrade gracefully (Risk Agent operates on clause data alone) when unavailable.
 - Third-party LLM API and MCP server availability/pricing are dependencies outside the system's control; the system must handle both API outages and MCP server downtime without data loss (queued retry).
-- Where a needed MCP server does not yet exist for a target system, Termora's engineering team is responsible for building and maintaining a minimal, scoped MCP server for that system.
+- Where a needed MCP server does not yet exist for a target system, ContractLens's engineering team is responsible for building and maintaining a minimal, scoped MCP server for that system.
 
 ---
 
@@ -326,7 +326,7 @@ Organizations, Users, MCP Connections, Contracts, Contract Clauses, Usage Signal
 - **REQ-LEGAL-1:** The system shall not represent any drafted action (email, notice) as final or legally binding without explicit human review and sending.
 - **REQ-SEC-1:** All authentication shall support standard organizational SSO where available (future consideration; MVP may use email/password + MCP-based OAuth for connectors).
 - **REQ-SEC-2:** The system shall maintain role-based access control such that a Read-only Viewer cannot approve, reject, or execute any action, and cannot modify MCP server connections.
-- **REQ-SEC-3:** Every MCP server connection shall be scoped to the minimum tool permissions required for Termora's functionality; no MCP connection shall request write, delete, or admin-level scopes unless a specific approved feature requires it.
+- **REQ-SEC-3:** Every MCP server connection shall be scoped to the minimum tool permissions required for ContractLens's functionality; no MCP connection shall request write, delete, or admin-level scopes unless a specific approved feature requires it.
 - **REQ-COMP-1:** The audit trail shall be sufficient to reconstruct, for any executed action, what evidence led to the recommendation, which MCP tool calls retrieved the supporting data, who approved it, and what the verified outcome was — supporting internal finance/compliance review.
 
 ---
@@ -362,7 +362,7 @@ Organizations, Users, MCP Connections, Contracts, Contract Clauses, Usage Signal
 
 ## 8.3 Appendix C — Traceability Note
 
-Every `FR-*` requirement in Section 3 maps to a corresponding pipeline stage and component defined in the companion **Termora HLD/LLD** document (MCP Client Layer, Ingestion Service, Agent Pool, Decision Engine, Approval & Notification Service, Action Executor, Verification Service, Dashboard). See ADR-001 in the HLD/LLD document for the rationale behind the MCP-based connector architecture. Implementation teams should cross-reference both documents together.
+Every `FR-*` requirement in Section 3 maps to a corresponding pipeline stage and component defined in the companion **ContractLens HLD/LLD** document (MCP Client Layer, Ingestion Service, Agent Pool, Decision Engine, Approval & Notification Service, Action Executor, Verification Service, Dashboard). See ADR-001 in the HLD/LLD document for the rationale behind the MCP-based connector architecture. Implementation teams should cross-reference both documents together.
 
 ## 8.4 Appendix D — Open Questions for Stakeholder Sign-off
 
@@ -375,3 +375,4 @@ Every `FR-*` requirement in Section 3 maps to a corresponding pipeline stage and
 ---
 
 *End of Software Requirements Specification.*
+

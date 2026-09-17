@@ -1,5 +1,5 @@
 """
-Termora — Team Management API
+ContractLens — Team Management API
 Admin-only: list org members, invite new users, update roles, remove users.
 """
 
@@ -69,7 +69,7 @@ def invite_user(
         raise HTTPException(status_code=409, detail="A user with this email already exists.")
 
     # Generate a temporary password — in production, send an invite email instead
-    temp_password = f"Termora-{body.email.split('@')[0]}-2025!"
+    temp_password = f"ContractLens-{body.email.split('@')[0]}-2025!"
     new_user = User(
         org_id=current_user.org_id,
         email=body.email,
@@ -139,3 +139,4 @@ def remove_user(
     db.commit()
     logger.info(f"[Team] Admin {current_user.email} removed {user.email}")
     return {"message": f"User {user.email} removed from org."}
+

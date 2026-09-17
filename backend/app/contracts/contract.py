@@ -1,5 +1,5 @@
 """
-Termora — Contract Model
+ContractLens — Contract Model
 Stores raw contract document data after ingestion from Drive/Gmail/manual upload.
 """
 
@@ -53,3 +53,4 @@ class Contract(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     def __repr__(self) -> str:
         return f"<Contract id={self.id} file={self.file_name!r} status={self.status}>"
+
